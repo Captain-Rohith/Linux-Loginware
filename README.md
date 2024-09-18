@@ -161,9 +161,6 @@ In Buildroot's `menuconfig`, you can search for a package by following these ste
 
 For example, if you're looking for `sqlite`, you can type `sqlite`, and it will display all related packages, along with their menu locations. This feature is very useful for quickly finding where a package is located. in the same way you can include sudo, bash, and other essential packages.
 
-
-Python and Node.js packages might need to be installed post-build since Buildroot doesn’t natively manage `pip` or `npm` dependencies. SQLite, Apache, and Xorg settings can be directly configured in Buildroot's `menuconfig`.
-
 ### 3. Adding Custom Packages
 
 1. First, create a directory structure for the new custom package inside the `package/` directory of your Buildroot project.
