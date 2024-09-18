@@ -159,7 +159,7 @@ In Buildroot's `menuconfig`, you can search for a package by following these ste
 
 3. Type the name of the package you're searching for (or part of it) and press `Enter`.
 
-For example, if you're looking for `sqlite`, you can type `sqlite`, and it will display all related packages, along with their menu locations. This feature is very useful for quickly finding where a package is located. in the same way you can include sudo, bash, and other essential packages.
+For example, if you're looking for `sqlite`, you can type `sqlite`, and it will display all related packages, along with their menu locations. In the same way you can include `sudo, bash, Xorg` and other essential packages.
 
 ### 3. Adding Custom Packages
 
