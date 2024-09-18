@@ -2,7 +2,7 @@
 
 This repository contains the resources and instructions for building a custom operating system using [Buildroot](https://buildroot.org/) and a sample .img file of **Linux Loginware 6.6.28**. Buildroot is a tool that simplifies the process of building embedded Linux systems by automating the process of cross-compiling libraries and generating file systems.
 
-## Table of contents
+## Table of Contents
 
 1. [Prerequisites](#prerequisites)
    - [Hardware Requirements](#hardware-requirements)
@@ -12,13 +12,15 @@ This repository contains the resources and instructions for building a custom op
    - [1. Configure Target Architecture](#1-configure-target-architecture)
    - [2. Customize Buildroot](#2-customize-buildroot)
    - [3. Adding Custom Packages](#3-adding-custom-packages)
-   - [4. Rebuilding the System](#4-rebuilding-the-system)
-   - [5. Flashing the OS](#5-flashing-the-os)
-   - [6. Booting the Device](#6-booting-the-device)
-   - [7. Customizing Boot Scripts and Services](#7-customizing-boot-scripts-and-services)
-3. [Debugging](#debugging)
-4. [Expected Error After Booting](#7-expected-error-after-booting)
-5. [Clean Build](#clean-build)
+3. [Build the Image](#build-the-image)
+4. [Expected Errors](#expected-errors)
+5. [Post-build Integration (Optional)](#post-build-integration-optional)
+6. [Rebuilding the System](#rebuilding-the-system)
+7. [Flashing the OS](#flashing-the-os)
+8. [Booting the Device](#booting-the-device)
+9. [Customizing Boot Scripts and Services](#customizing-boot-scripts-and-services)
+10. [Debugging](#debugging)
+11. [Clean Build](#clean-build)
 
 ## Prerequisites
 
