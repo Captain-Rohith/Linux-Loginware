@@ -278,6 +278,9 @@ For example, to auto-start the Chromium browser in kiosk mode, edit the `/etc/in
 ```bash
 #!/bin/sh
 # Start Chromium in Kiosk Mode
+startx &
+sleep 5
+# give a bit delay so that X server will start before launching chromium browser
 /usr/bin/chromium-browser --kiosk http://localhost
 ```
 
