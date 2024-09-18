@@ -6,7 +6,7 @@ This repository contains the resources and instructions for building a custom op
 
 ### Hardware Requirements
 
-- A host system running Linux (e.g., Ubuntu, Fedora, etc.).
+- A host system running Linux (Ubuntu).
 - Target hardware (Raspberry Pi).
 
 ### Software Requirements
@@ -85,44 +85,45 @@ make menuconfig
 ```
 
 Options to configure:
+**Click on space to select**
 - **System Configuration**: choose the system hostname, system banner, and root password (optional).
 - Note: If you are unable to locate any particular package or setting, write a script(shell file) to execute the required and add the path to 'Custom Scripts to run before commencing the build' under 'System Configuration'.
 - **Toolchain**: select buildroot toolchain (recommended).
 - **Kernel**: Choose the kernel version and configure kernel options.
 - **Root Filesystem**: Select the type of root filesystem (e.g., ext4, squashfs, etc.).
 
-### 1. **Python Packages**
+#### 1. **Python Packages**
    - **Flask**, **SQLAlchemy**, **Flask-SQLAlchemy**, **Flask-CORS**, **pymodbus**, **schedule**, **aiohttp**:
      - Location: 
-       ```
+       
        Target packages  ---> 
          Interpreter languages and scripting  ---> 
            python3  ---> 
              python3-pip
-       ```
+       
      You will need to include `python3-pip` and then install the specific Python packages via a `post-build` script or add them manually in a custom package.
 
-### 2. **Node.js and npm Packages**
+#### 2. **Node.js and npm Packages**
    - **Node.js**:
      - Location: 
-       ```
+       
        Target packages  ---> 
          Interpreter languages and scripting  ---> 
            nodejs
-       ```
+       
    - **npm global packages (serve)**:
      You will need to install `serve` globally after installing `npm`, potentially through a `post-build` script.
 
 
-### 3. **Apache2**
+#### 3. **Apache2**
    - **Apache HTTP Server**:
      - Location:
-       ```
+       
        Target packages  --->
          Networking applications  ---> 
            apache
-       ```
-### 4. **Search for a package/know location**
+       
+#### 4. **Search for other packages/know location and select**
 In Buildroot's `menuconfig`, you can search for a package by following these steps:
 
 1. Open `menuconfig`:
@@ -134,7 +135,7 @@ In Buildroot's `menuconfig`, you can search for a package by following these ste
 
 3. Type the name of the package you're searching for (or part of it) and press `Enter`.
 
-For example, if you're looking for `sqlite`, you can type `sqlite`, and it will display all related packages, along with their menu locations. This feature is very useful for quickly finding where a package is located within the extensive Buildroot configuration options.
+For example, if you're looking for `sqlite`, you can type `sqlite`, and it will display all related packages, along with their menu locations. This feature is very useful for quickly finding where a package is located. in the same way you can include sudo, bash, and other essential packages.
 
 
 Python and Node.js packages might need to be installed post-build since Buildroot doesn’t natively manage `pip` or `npm` dependencies. SQLite, Apache, and Xorg settings can be directly configured in Buildroot's `menuconfig`.
@@ -180,7 +181,7 @@ You will also need a configuration file to integrate the package into the Buildr
 nano package/chromium-browser/Config.in
 ```
 
-Here’s an example:
+Example:
 
 ```makefile
 config BR2_PACKAGE_CHROMIUM_BROWSER
@@ -214,8 +215,8 @@ make menuconfig
 - Navigate to `Target packages  ---> Networking applications`
 - Select `chromium-browser` to enable it.
 
-#### 6. **Rebuild the Image**
-Once you have configured the package in `menuconfig`, rebuild the image:
+#### 6. **build the Image**
+Once you have configured the package in `menuconfig`, build the image:
 
 ```bash
 make
@@ -256,7 +257,7 @@ The generated files will be placed in the `output/images` directory.
 
 ### 5. Flashing the OS
 
-Once the OS has been built, you can flash it onto your target device. For SD card-based systems (e.g., Raspberry Pi), you can use the `dd` command:
+Once the OS has been built, you can flash it onto your target device. For SD card-based systems (e.g., Raspberry Pi), you can use the `dd` command or use [raspberry pi imager](https://www.raspberrypi.com/software/):
 
 ```bash
 sudo dd if=output/images/sdcard.img of=/dev/sdX bs=4M
