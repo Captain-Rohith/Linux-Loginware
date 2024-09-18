@@ -17,7 +17,7 @@ This repository contains the resources and instructions for building a custom op
    - [6. Booting the Device](#6-booting-the-device)
    - [7. Customizing Boot Scripts and Services](#7-customizing-boot-scripts-and-services)
 3. [Debugging](#debugging)
-4. [Expected Error After Booting](#expected-error-after-booting)
+4. [Expected Error After Booting](#7-expected-error-after-booting)
 5. [Clean Build](#clean-build)
 
 ## Prerequisites
