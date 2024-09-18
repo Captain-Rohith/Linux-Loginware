@@ -2,6 +2,35 @@
 
 This repository contains the resources and instructions for building a custom operating system using [Buildroot](https://buildroot.org/) and a sample .img file of **Linux Loginware 6.6.28**. Buildroot is a tool that simplifies the process of building embedded Linux systems by automating the process of cross-compiling libraries and generating file systems.
 
+## Table of contents
+
+1. [Prerequisites](#prerequisites)
+   - [Hardware Requirements](#hardware-requirements)
+   - [Software Requirements](#software-requirements)
+   - [Clone the Repository](#clone-the-repository)
+2. [Configuration](#configuration)
+   - [1. Configure Target Architecture](#1-configure-target-architecture)
+   - [2. Customize Buildroot](#2-customize-buildroot)
+     - [1. Python Packages](#1-python-packages)
+     - [2. Node.js and npm Packages](#2-nodejs-and-npm-packages)
+     - [3. Apache2](#3-apache2)
+     - [4. Search for other packages](#4-search-for-other-packages)
+   - [3. Adding Custom Packages](#3-adding-custom-packages)
+     - [1. Create a `.mk` Build File](#1-create-a-mk-build-file)
+     - [2. Create a Config File (`Config.in`)](#2-create-a-config-file-configin)
+     - [3. Add the Package to Buildroot's Main `Config.in`](#3-add-the-package-to-buildroots-main-configin)
+     - [4. Enable Chromium in `menuconfig`](#4-enable-chromium-in-menuconfig)
+     - [5. Build the Image](#5-build-the-image)
+     - [6. Expected Errors](#6-expected-errors)
+     - [7. Post-build Integration (Optional)](#7-post-build-integration-optional)
+   - [4. Rebuilding the System](#4-rebuilding-the-system)
+   - [5. Flashing the OS](#5-flashing-the-os)
+   - [6. Booting the Device](#6-booting-the-device)
+   - [7. Customizing Boot Scripts and Services](#7-customizing-boot-scripts-and-services)
+3. [Debugging](#debugging)
+4. [Expected Error After Booting](#expected-error-after-booting)
+5. [Clean Build](#clean-build)
+
 ## Prerequisites
 
 ### Hardware Requirements
