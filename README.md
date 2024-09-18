@@ -224,7 +224,13 @@ make
 
 Buildroot will download, configure, compile, and install Chromium as part of your custom Linux image.
 
-#### 7. **Post-build Integration (Optional)**
+#### 7. **Expected errors**
+- No space left on device:
+  - Resize you partition
+- may need to resize root filesystem:
+    - In `menuconfig` go to: filesystem images ---> exact size : change it to higher value as required (in mb)
+
+#### 8. **Post-build Integration (Optional)**
 If you need additional tweaks (e.g., setting Chromium to start in kiosk mode), you can use a `post-build` or `post-image` script to customize the image further.
 
 For example, add a script to auto-launch Chromium in kiosk mode:
@@ -294,6 +300,11 @@ chmod +x /etc/init.d/S99chromium
 
 In case of issues, log files can be checked on the device. Serial console or SSH can be used to access the system and troubleshoot issues.
 
+## 7. **Expected error after booting**
+**fatal server, no screens found:**
+
+make sure fbdev driver, kbd, xorg server and other dependencies of `Xorg` is selected in menuconfig, This should work but the issue was not resolved even after this in my case, If you find a way to solve please push the solution.
+    
 ## Clean Build
 
 If you want to start fresh, you can clean the output:
