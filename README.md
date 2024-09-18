@@ -1,6 +1,6 @@
 # Custom OS on Buildroot
 
-This repository contains the resources and instructions for building a custom operating system using [Buildroot](https://buildroot.org/) and a link to sample .img file of **Linux Loginware 6.6.28** [download img file](https://www.dropbox.com/scl/fi/yj4qo1y04pim0xmklk6fo/sdcard.img?rlkey=1tqv8kg26b7escaux31wdaqxr&st=4hz9doo3&dl=0). Buildroot is a tool that simplifies the process of building embedded Linux systems by automating the process of cross-compiling libraries and generating file systems.
+This repository contains the resources and instructions for building a custom operating system using [Buildroot](https://buildroot.org/) and a link to sample .img file of **Linux Loginware 6.6.28** [[download img file]](https://www.dropbox.com/scl/fi/yj4qo1y04pim0xmklk6fo/sdcard.img?rlkey=1tqv8kg26b7escaux31wdaqxr&st=4hz9doo3&dl=0). Buildroot is a tool that simplifies the process of building embedded Linux systems by automating the process of cross-compiling libraries and generating file systems.
 
 ## Table of Contents
 
