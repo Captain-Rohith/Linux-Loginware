@@ -233,7 +233,7 @@ make menuconfig
 - Navigate to `Target packages  ---> Networking applications`
 - Select `chromium-browser` to enable it.
 
-#### 6. **build the Image**
+### 6. **build the Image**
 Once you have configured the package in `menuconfig`, build the image:
 
 ```bash
@@ -242,13 +242,13 @@ make
 
 Buildroot will download, configure, compile, and install Chromium as part of your custom Linux image.
 
-#### 7. **Expected errors**
+### 7. **Expected errors**
 - No space left on device:
   - Resize you partition
 - may need to resize root filesystem:
     - In `menuconfig` go to: filesystem images ---> exact size : change it to higher value as required (in mb)
 
-#### 8. **Post-build Integration (Optional)**
+### 8. **Post-build Integration (Optional)**
 If you need additional tweaks (e.g., setting Chromium to start in kiosk mode), you can use a `post-build` or `post-image` script to customize the image further.
 
 For example, add a script to auto-launch Chromium in kiosk mode:
