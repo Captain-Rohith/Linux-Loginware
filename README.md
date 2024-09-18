@@ -267,7 +267,7 @@ Replace `/dev/sdX` with your actual SD card device.
 
 ### 6. Booting the Device
 
-Insert the SD card or connect your target system to your host machine, power it on, and your custom Buildroot-based OS should boot.
+Insert the SD card to target hardware (raspberrypi 4), power it on, and your custom Buildroot-based OS should boot.
 
 ### 7. Customizing Boot Scripts and Services
 
