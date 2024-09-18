@@ -243,9 +243,9 @@ echo '/usr/bin/chromium-browser --kiosk --disable-infobars' > $(TARGET_DIR)/etc/
 chmod +x $(TARGET_DIR)/etc/init.d/S99chromium
 ```
 
-### 4. Building the System
+### 4. Rebuilding the System
 
-To build the entire system, use the following command:
+To rebuild the entire system, use the following command:
 
 ```bash
 make
