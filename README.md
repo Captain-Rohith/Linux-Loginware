@@ -120,8 +120,12 @@ Options to configure:
          Interpreter languages and scripting  ---> 
            python3  ---> 
              python3-pip
+
+       Target packages  ---> 
+               Interpreter languages and scripting  ---> 
+                    External Python modules
        
-     You will need to include `python3-pip` and then install the specific Python packages via a `post-build` script or add them manually in a custom package.
+   You will need to include `python3-pip` and then install the specific Python packages via a `post-build` script or add them manually in a custom package.
 
 #### 2. **Node.js and npm Packages**
    - **Node.js**:
