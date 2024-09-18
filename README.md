@@ -162,7 +162,7 @@ Example of chromium-browser:
 CHROMIUM_BROWSER_VERSION = 91.0.4472.114
 CHROMIUM_BROWSER_SITE = https://commondatastorage.googleapis.com/chromium-browser-official/chromium-$(CHROMIUM_BROWSER_VERSION).tar.xz
 
-CHROMIUM_BROWSER_DEPENDENCIES = libglib2 openssl libgtk3 ...
+CHROMIUM_BROWSER_DEPENDENCIES = libglib2 openssl libgtk3
 
 # Set the installation directory for chromium
 define CHROMIUM_BROWSER_INSTALL_CMDS
