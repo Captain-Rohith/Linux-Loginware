@@ -143,7 +143,7 @@ Options to configure:
          Networking applications  ---> 
            apache
        
-#### 4. **Search for other packages/know location and select**
+#### 4. **Search for any package/know location and select**
 In Buildroot's `menuconfig`, you can search for a package by following these steps:
 
 1. Open `menuconfig`:
