@@ -160,7 +160,7 @@ Python and Node.js packages might need to be installed post-build since Buildroo
 
 ### 3. Adding Custom Packages
 
-First, create a directory structure for the new custom package inside the `package/` directory of your Buildroot project.
+1. First, create a directory structure for the new custom package inside the `package/` directory of your Buildroot project.
 
 ```bash
 cd buildroot
@@ -233,7 +233,7 @@ make menuconfig
 - Navigate to `Target packages  ---> Networking applications`
 - Select `chromium-browser` to enable it.
 
-### 6. **build the Image**
+## **build the Image**
 Once you have configured the package in `menuconfig`, build the image:
 
 ```bash
@@ -242,13 +242,13 @@ make
 
 Buildroot will download, configure, compile, and install Chromium as part of your custom Linux image.
 
-### 7. **Expected errors**
+## **Expected errors**
 - No space left on device:
   - Resize you partition
 - may need to resize root filesystem:
     - In `menuconfig` go to: filesystem images ---> exact size : change it to higher value as required (in mb)
 
-### 8. **Post-build Integration (Optional)**
+## **Post-build Integration (Optional)**
 If you need additional tweaks (e.g., setting Chromium to start in kiosk mode), you can use a `post-build` or `post-image` script to customize the image further.
 
 For example, add a script to auto-launch Chromium in kiosk mode:
@@ -267,7 +267,7 @@ echo '/usr/bin/chromium-browser --kiosk --disable-infobars' > $(TARGET_DIR)/etc/
 chmod +x $(TARGET_DIR)/etc/init.d/S99chromium
 ```
 
-### 4. Rebuilding the System
+## Rebuilding the System
 
 To rebuild the entire system, use the following command:
 
@@ -279,7 +279,7 @@ Buildroot will download and compile the necessary toolchains, libraries, and app
 
 The generated files will be placed in the `output/images` directory.
 
-### 5. Flashing the OS
+## Flashing the OS
 
 Once the OS has been built, you can flash it onto your target device. For SD card-based systems (e.g., Raspberry Pi), you can use the `dd` command or use [raspberry pi imager](https://www.raspberrypi.com/software/):
 
@@ -289,11 +289,11 @@ sudo dd if=output/images/sdcard.img of=/dev/sdX bs=4M
 
 Replace `/dev/sdX` with your actual SD card device.
 
-### 6. Booting the Device
+## Booting the Device
 
 Insert the SD card to target hardware (raspberrypi 4), power it on, and your custom Buildroot-based OS should boot.
 
-### 7. Customizing Boot Scripts and Services
+## Customizing Boot Scripts and Services
 
 If you need the system to auto-start specific services (e.g., launching an application in kiosk mode), you can modify the startup scripts. Add custom init scripts under `/etc/init.d/` or use a custom service manager.
 
@@ -318,7 +318,7 @@ chmod +x /etc/init.d/S99chromium
 
 In case of issues, log files can be checked on the device. Serial console or SSH can be used to access the system and troubleshoot issues.
 
-## 7. **Expected error after booting**
+## Expected error after booting
 **fatal server, no screens found:**
 
 make sure fbdev driver, kbd, xorg server and other dependencies of `Xorg` is selected in menuconfig, This should work but the issue was not resolved even after this in my case, If you find a way to solve please push the solution.
